@@ -1,0 +1,48 @@
+<div class='col-md-6'>
+    <div class="panel panel-default">
+        <div class="panel-heading">Burger</div>
+        {{#each burgers}} 
+        {{#if this.devoured}}
+        <ol>
+            <li>
+                <div class='list'>
+                    <p> {{this.burger_name}}</p>
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+          <button type="submit" class="btn btn-success">Eating </button>
+          </form>
+                </div>
+            </li>
+        </ol>
+        {{/if}} 
+        {{/each}}
+    </div>
+</div>
+</div>
+<div class='col-md-6'>
+    <div class="panel panel-default">
+        <div class="panel-heading">Devour</div>
+        {{#each burgers}} 
+        {{#unless this.devoured}}
+        <ol>
+            <li>
+                <div class='list'>
+                    <p> {{this.burger_name}}</p>
+                </div>
+            </li>
+        </ol>
+        {{/unless}} 
+        {{/each}}
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form method="POST" action="/create">
+            <textarea type="text" name="burger_name" cols="30" rows="5"></textarea>
+            </br>
+            </br>
+            <button type="submit" class="btn btn-success">Add A Burger</button>
+        </form>
+    </div>
+</div>
+
