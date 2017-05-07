@@ -29,10 +29,10 @@ router.put("/:id", function(req, res) {
 
     console.log("condition", condition);
 
-    burger.update({ 'devoured': req.body.devoured }, condition,
-        function(data) {
-            res.redirect('/');
-        });
+burger.update({ devoured: true}, condition, 
+	function(data) {
+    res.redirect('/');
+  });
 });
 
 //Export routes for server.js to use.
